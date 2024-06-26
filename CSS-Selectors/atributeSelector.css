@@ -1,0 +1,13 @@
+input[type="text"]{
+    border: 6px solid yellow;
+border-style: dotted; 
+}
+input[type="submit"]{
+    background-color: aqua;
+}
+a[href="https://elearn.epam.com/courses/course-v1:RD_CEE+JB_ENG+7_ENG/courseware/623fa0ea3238418d9cfe7f47a5aefc07/bd413b29677a4489bf1a7c96850c916c/"]{
+    background-color: chocolate;
+}
+a[href="https://avb.bg"]{
+    background-color: blue;
+}

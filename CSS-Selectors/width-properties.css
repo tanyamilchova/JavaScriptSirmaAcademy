@@ -1,0 +1,6 @@
+.width-example{
+    width: 35vw;
+    min-width: 200px;
+    max-width: 400px;
+    background-color: palevioletred;
+}

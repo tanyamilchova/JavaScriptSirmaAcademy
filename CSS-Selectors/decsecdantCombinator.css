@@ -1,0 +1,11 @@
+p{
+    color: yellow;
+}
+div p{
+    color: rebeccapurple;
+    background-color: burlywood;
+}
+div>p{
+    color: green;
+    background-color: red;
+}

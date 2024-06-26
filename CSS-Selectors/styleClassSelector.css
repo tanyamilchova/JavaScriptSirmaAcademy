@@ -1,0 +1,15 @@
+.highlight{
+color: red;
+}
+.highlight1{
+    background-color: grey;
+    color: greenyellow;
+    }
+    .red{
+        color: red;
+    }
+    .common-style{
+        background-color: blueviolet;
+        color: rebeccapurple;
+        font-weight: bold;
+    }

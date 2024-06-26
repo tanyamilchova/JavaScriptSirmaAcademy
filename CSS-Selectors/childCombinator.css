@@ -1,0 +1,6 @@
+div>p{
+    background-color: pink;
+}
+.parent>p{
+    background-color: aqua;
+}
