@@ -1,0 +1,80 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+    text-align: center;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(43, 43, 50);
+    padding: 10px;   
+}
+nav a{
+    color: white;
+    background-color: rgb(44, 41, 41);
+    padding: 10px;
+    text-decoration: none;
+}
+nav a:hover{
+    color: rgb(254, 233, 206);
+}
+p, h1{
+    background-color: rgb(32, 32, 37);
+    color: white;
+}
+footer{
+    position: fixed;
+    bottom: 5vh;
+    left: 50%
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  
+}
+.section{
+    background-color: gray;
+    padding: 15px;
+    text-align: center;
+}
+
+@media  (max-width:599px){
+    .container{
+        grid-template-columns: 1fr;
+    }
+
+    nav{
+        display: none
+    }
+}
+@media (min-width:600px) and (max-width:899px){
+    .container{
+        grid-template-columns: 1fr;
+    }
+    nav{
+        display: list-item;    
+    }
+}
+
+@media (min-width:900px) and (max-width:1199px){
+    .container{
+        grid-template-columns: repeat(2, 1fr);
+        width: 88%;
+        position: relative;
+        left: 120px;
+
+    }
+    nav{
+       position: absolute;
+       display: flex;
+       flex-direction: column;
+     
+       height: 100vh;
+      
+       justify-content: start;
+      }
+}

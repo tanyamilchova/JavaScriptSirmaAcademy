@@ -1,0 +1,11 @@
+p.lorem::first-line{
+    font-style: italic;
+  }
+  p.lorem::first-letter{
+    font-size: 48px;
+  }
+  .lorem::before{
+    display: block;
+    content: "Before the Lorem";
+  }
+

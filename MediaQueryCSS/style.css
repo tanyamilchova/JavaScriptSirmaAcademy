@@ -1,0 +1,82 @@
+/* :root{
+  /* деклариране на променливи: */
+  /* --large-display-width:1047px; */
+  /* --medium-display-width:675px; */
+/* } */
+/* :root{
+  --primery-color:aquamarine;
+  --sec-color:cadetblue;
+} */
+@import url("variable.css");
+body{
+    background-color: antiquewhite;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+
+}
+.site-wraper{
+
+  width: 1000px;
+  margin: auto ;
+ 
+}
+h1,h2,footer{
+  text-align: center;
+
+}
+footer{
+  margin-top: 50px;
+}
+.container{
+  padding: 2px 16px;
+}
+
+.site-content{
+    padding: 20px;
+    background-color: var(--primery-color);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+
+
+}
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 300px;
+}
+.card:hover{
+  background-color: var(--sec-color);
+  cursor: pointer;
+}
+@media screen and (max-width: 1047px) {
+  .site-wraper{
+    width: 660px;
+    font-size: 28px;
+  }
+  .site-content{
+    grid-template-columns: repeat(2, 1fr);
+    background-color: rgb(192, 192, 221);
+    
+  }
+
+}
+@media screen and (max-width:673px)  {
+  .site-wraper{
+    width: 340px;
+    font-size: 22px;
+  }
+  .site-content{
+    grid-template-columns:  1fr;
+  
+  }
+
+}
+@media screen and (orientation:portrait)  {
+ 
+  .site-content{
+   background-color: rgb(177, 104, 155);
+  }
+
+}
