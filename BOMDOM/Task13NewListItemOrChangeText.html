@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create item or edit text</title>
+    <style>
+        div{
+            background-color: antiquewhite;
+            border: 2px solid brown;
+        }
+        p{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Click on the item to change the text, or click on the button to create a new item</p>
+        <ul id="list">
+            <li onclick="changeText(this)">Map,filter,reduce</li>
+            <li onclick="changeText(this)">The DOM</li>
+            <li onclick="changeText(this)">Callbacks</li>
+        </ul>
+        <input type="text" id="input" >
+        <button  value="Create New" onclick="createNewElement()"> Create New </button>
+    </div>
+    <script>
+        function createNewElement(){
+            const listElement=document.getElementById('list');
+            const input=document.getElementById('input');
+         
+            const newText = input.value.trim(); 
+            if(input.value!==''){
+            const element=document.createElement('li');
+            element.textContent=input.value;
+            listElement.appendChild(element);
+            }else{
+                alert('Enter some text');
+            }
+        }
+        function changeText(clickedElement) {
+            const newText = prompt('Enter new text:', clickedElement.textContent);
+            if ( newText!=NaN || newText !== null ) {
+                clickedElement.textContent = newText;
+            }
+        }
+
+    </script>
+</body>
+</html>

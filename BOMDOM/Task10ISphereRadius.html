@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate radius</title>
+    <style>
+        div{
+            border: 2px solid black;
+        }
+        p{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div>
+<p>
+    Input radius value and get the volume of a sphere.
+</p>
+<form action="">
+    <label for="radius">Radius</label><br>
+    <input type="text" id="radius" name="radius"><br>
+    <label for="value">Volume:</label><br>
+    <input type="text" id="value" readonly>
+    <input type="button"  value="Calculate" onclick="calculateRadius()">
+</form>
+    </div>
+    <script>
+        function calculateRadius(){
+            const radiusInput=document.getElementById('radius');
+            const radius=parseFloat(radiusInput.value);
+
+            if(isNaN(radius) || radius<=0){
+                alert('Enter a valid radius');
+                return;
+
+            }
+            const volume=(4/3)*Math.pow(radius,3);
+            const valueInput=document.getElementById('value');
+            valueInput.value=volume.toFixed(2);
+        }
+    </script>
+</body>
+</html>

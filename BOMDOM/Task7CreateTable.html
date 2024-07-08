@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Change the content of a cell</title>
+    <style type="text/css">
+        body {margin: 30px;}
+    </style>
+</head>
+<body>
+    <table id="myTable" border="1">
+
+    </table>
+
+    <form>
+        <input type="button" onclick="createTable()" value="Create the table">
+    </form>
+
+    <script>
+          function createTable() {
+            const table=document.querySelector('#myTable');
+                
+            const tr1=document.createElement('tr');
+            const rowNums=table.querySelectorAll('tr').length;
+            
+            const rowNumCh=table.children.length;
+            console.log('rowNums: '+rowNums);
+            console.log('rowNumCh: '+rowNumCh);
+
+            const td11=document.createElement('td');
+            td11.textContent=`Row${rowNums+1} cell1`;
+            tr1.appendChild(td11);
+
+            const td12=document.createElement('td');
+            td12.textContent=`Row${rowNums+1} cell2`;
+            tr1.appendChild(td12);
+
+            table.appendChild(tr1);
+    
+            const tr2=document.createElement('tr');
+            console.log('rowNums: '+rowNums);
+            const td21=document.createElement('td');
+            td21.textContent=`Row${rowNums +1} cell1`;
+            tr2.appendChild(td21);
+
+            const td22=document.createElement('td');
+            td22.textContent=`Row${rowNums+1} cell2`;
+            tr2.appendChild(td22);
+            
+            table.appendChild(tr2);
+    
+          }
+    </script>
+  
+</body>
+</html>

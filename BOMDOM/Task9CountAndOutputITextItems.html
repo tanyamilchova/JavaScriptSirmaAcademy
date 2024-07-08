@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        body {margin: 30px;}
+    </style>
+    <title>Count and display items of a dropdown list</title>
+</head>
+<body>
+    <form>
+        Select your favorite Color:
+        <select id="mySelect">
+            <option>Red</option>
+            <option>Green</option>
+            <option>Blue</option>
+            <option>White</option>
+        </select>
+        <input type="button" onclick="getOptions()" value="Count and Output all items" />
+    </form>
+
+    <div id="output"></div>
+    <script>
+        function getOptions(){
+            const optionElements=document.querySelectorAll('#mySelect >option');
+        
+        console.log(optionElements);
+        const optionToArray=Array.from(optionElements);
+        const resultTextsArray= optionToArray.map(option=>option.textContent);
+        alert(  `BRAVO BE! \n Options: ${resultTextsArray}`);
+        }
+    </script>
+</body>
+</html>

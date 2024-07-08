@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get window width and height</title>
+    <style>
+
+        div{
+            background-color: antiquewhite;
+            border: 2px solid brown;
+        }
+        p{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+   
+    <p>
+        Resize the window to get it's width and height.
+    </p>
+    <form>
+        <label for="width">Width:</label><br>
+        <input type="text" id="width" readonly><br>
+
+        <label for="height">Height:</label><br>
+        <input type="text" id="height" readonly><br>
+
+    </form>
+</div>
+    <script>
+        function getWidthAndHeight(){
+            const widthValue=document.getElementById('width');
+            const heightValue = document.getElementById('height');
+            widthValue.value=window.innerWidth;
+            heightValue.value = window.innerHeight;
+        }
+        getWidthAndHeight();
+        window.addEventListener('resize',getWidthAndHeight)
+    </script>
+</body>
+</html>
