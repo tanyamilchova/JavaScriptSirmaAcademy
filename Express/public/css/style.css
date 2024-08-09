@@ -1,0 +1,13 @@
+.movie-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.page-title{
+    text-align: center;
+    margin-top: 50px;
+}
+.content{
+   display: flex;
+   justify-content: center; 
+}

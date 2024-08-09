@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Context</title>
+</head>
+
+<body>
+    <h1>Global Context</h1>
+    <button id="button">Click Me!</button>
+    <button id="button-two">Click Me2!</button>
+
+    <script>
+        // Global context
+        console.log(this);
+
+        // Global function invoke
+        function printContext() {
+            console.log(this);
+        }
+
+        printContext();
+
+        // Method execution
+        const employee = {
+            name: 'Pesho',
+            work() {
+                console.log(`${this.name} - Work work work work work...`);
+                console.log(this);
+            }
+        }
+
+        employee.work();
+
+        // Execute method as global execution
+        const work = employee.work;
+        work();
+
+        // example with inner function
+        const person = {
+            name: 'Gosho',
+            outer() {
+                console.log(this);
+
+                function inner() {
+                    console.log(this);
+                }
+
+                inner();
+            }
+        }
+
+        person.outer();
+
+        // Using arrow function as inner funciton
+        const person2 = {
+            name: 'Stamat',
+            outer() {
+                console.log(this);
+
+                const inner = () => console.log(this);
+
+                inner();
+            }
+        }
+
+        person2.outer();
+
+        // Event handler context
+        function firstHandler(first, second) {
+            console.log(`${this.name} - First Handler ${first} ${second}`);
+            console.log(this);
+        }
+
+        const eventHandlers = {
+            second(first, second) {
+                console.log(`${this.name} - Second Handler ${first} ${second}`);
+                console.log(this);
+            }
+        }
+
+        const buttonElement = document.getElementById('button');
+        buttonElement.addEventListener('click', firstHandler);
+
+        const secondButtonElement = document.getElementById('button-two');
+        secondButtonElement.addEventListener('click', eventHandlers.second);
+    </script>
+</body>
+
+</html>

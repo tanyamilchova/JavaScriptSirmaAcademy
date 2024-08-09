@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dlobal Context</h1>
+    <button id="button">Click me</button>
+    <button id="button-2">Click me-2</button>
+    <script>
+        console.log(this);
+
+        function printContext(){
+            console.log(this);
+        }
+// Method execution
+        const employee={
+            name:"Peso",
+            work(){
+                name="Goso";
+                console.log("Work ...");
+                console.log(`${this.name} -Work ...`);
+            },
+            outer(){
+                console.log(this);
+                function inner(){
+                    console.log(this);
+                }
+                inner();
+            }
+        }
+        employee.work();
+        employee.outer();
+
+        // new reference this points to window obj
+        const work= employee.work;
+        work();
+
+        // arrow 
+        const person2={
+            name : 'Stamat',
+            outer(){
+                console.log(this);
+                const inner=()=>console.log(this);
+                inner();
+            }
+        }
+        person2.outer();
+
+
+
+        // event handler
+        function firstHandler(first, second){
+            console.log(`${this.name} - firstHandler ${first} ${second}`);
+            console.log(this);
+        }
+        const  eventHandler={
+            second(first, second){
+                console.log(`${this.name} - secondHandler ${first} ${second}`);
+                console.log(this);
+
+            }
+            
+        }
+        const buttonElement=document.getElementById('button');
+        buttonElement.addEventListener('click',firstHandler);
+
+        const buttonElement2=document.getElementById('button-2');
+        buttonElement2.addEventListener('click',eventHandler.second);
+ 
+// Explicid binding - call
+        const firstContext= {
+            name: 'First Context',
+        };
+        // call - сменя контекста и моментало изпълнява функцията
+          // 1.Change the firstContext
+        // 2.Execute the functions
+        // 3. You can add arguments
+      
+        firstHandler.call(firstContext,'firstArg', 'secArg');
+
+        // apply - explisid binding
+        // 1.Change the firstContext
+        // 2.Execute the functions
+        // 3. You can add arguments
+         firstHandler.call(firstContext,['firstArg', 'secArg']);
+
+//          bind - explisid binding - dos not execute the function immediately
+  // 1.Change the firstContext
+       
+        // 3. You can add arguments
+
+        const firstcontext={
+            name : 'first context',
+        };
+        const secondcontext={
+            name : 'second context',
+        };
+        
+        const bindHandler=eventHandler.second.bind(secondcontext, 'firstArgument', 'secondArgument');
+        bindHandler();
+ </script>
+   
+</body>
+</html>
+

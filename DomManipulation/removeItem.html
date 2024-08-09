@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form >
+        <select  id="colorSelect">
+        <option>Red</option>
+        <option>Green</option>
+        <option>White</option>
+        <option>Yellow</option>
+    </select>
+    <input type="button" onclick="getOptions()" value="Count and Output all items">
+    </form>
+    <script>
+        getOptions(){
+            const optionElements=document.querySelectorAll(#mySelect>optopn);
+            const optionElementArray=Array.from(optionElements);
+            const options=optionElementArray.map(optopn=>options.textContent).join(',');
+
+            allert('Options: ${options}');
+        }
+    </script>
+</body>
+</html>

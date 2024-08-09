@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Explicit Binding</h1>
+
+    <script>
+        function firstHandler(first, second) {
+            console.log(`${this.name} - First Handler ${first} ${second}`);
+            console.log(this);
+        }
+
+        function secondHandler(first, second) {
+            console.log(`${this.name} - Second Handler ${first} ${second}`);
+            console.log(this);
+        }
+
+        // Explicit binding - Call
+        const firstContext = {
+            name: 'First Context',
+        };
+
+        const secondContext = {
+            name: 'Second Context'
+        };
+
+        // 1. call executes the function
+        // 2. call changes the context with the provided
+        // 3. call can pass one or more arguments
+        firstHandler.call(firstContext, 'firstArg', 'secondArg');
+
+        // Explicit binding - Apply
+        // same as call but arguments are passed as an array
+        firstHandler.apply(firstContext, ['firstArg', 'secondArg']);
+
+        // Explicit binding - Bind
+        // 1. bind DOES NOT execute the function immediately
+        // 2. call changes the context with the provided
+        // 3. call can pass one or more arguments
+        const secondHandlerBinding = secondHandler.bind(secondContext, 'FirstArg', 'SecondArg');
+
+        secondHandlerBinding();
+    </script>
+</body>
+
+</html>

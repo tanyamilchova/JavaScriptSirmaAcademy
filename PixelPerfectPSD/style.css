@@ -1,0 +1,325 @@
+/* Define the Oswald font */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('fonts/Oswald-VariableFont_wght.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Apply the Oswald font to elements */
+/* h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+} */
+/* +++++++++++++++++++++++++++++++++++++++ */
+body{
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Montserrat";
+    background-color: #eaeaea;
+}
+section{
+    padding: 80px;
+    min-height: 500px;
+    background-color: red;
+}
+/* other ssection styling */
+
+.container{
+display: flex;
+flex-direction: column;
+gap: 30px;
+}
+.container h1{
+    font-size: 75px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: "Oswald";
+    text-align: center;
+}
+.container p{
+   
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Montserrat";
+    text-align: center;
+    max-width: 70%;
+    font-family: "Oswald";
+    text-align: center;
+    margin-bottom: 20px;
+}
+main{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+/* navigation */
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #303030;
+    z-index: 10;
+}
+nav{
+     max-width: 1440; 
+     margin: 0 auto;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif;
+   
+}
+ nav ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 0px;
+    
+}
+nav ul li{
+    margin: 0 15px;
+}
+nav ul li a{
+   
+    text-decoration: none;
+    color: #fff;
+}
+
+.burrger-menu{
+    display: none;
+    flex-direction: column;
+}
+.burrger-menu .line{
+    width: 25px;
+    height: 3px;
+    background:#ffff;
+
+    margin: 4px;
+    /* transition: all 0.5s; */
+}
+#menu-toggle{
+    display:  none;
+}
+@media (max-width: 768px) {
+    nav{
+        justify-content: space-between;
+    }
+   
+    nav ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #303030;
+
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 10px;
+        display: none;
+
+    }
+    nav ul li{
+        margin: 15px 0px;
+    }
+
+    .burrger-menu{
+        display: flex;
+    }
+    .menu-toggle:check~ul{
+        display: flex;
+
+    }
+    .menu-toggle:checked + .line:nth-child(1){
+        transform: rotate(-40deg) translate(-5px, 6px);
+
+    }
+    .menu-toggle:checked + .burrger-menu .line:nth-child(2){
+      opacity: 0;
+
+    }
+    .menu-toggle:checked + .burrger-menu.line:nth-child(3){
+        transform: rotate(40deg) translate(-5px, -5px);
+
+    }
+}
+@media screen and(max-width: 768px) {
+    section {
+        padding:20px ;
+    }
+    .tour .cards{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+
+    }
+    /* justify-content: space-around; */
+}
+
+
+
+
+
+
+.hero{
+    height: 600px;
+    background-image:url(assets/hero.png);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.hero .container{
+    width: 50%;
+}
+.hero h1{
+    text-align: left;
+    text-transform: capitalize;
+    font-size: 125px;
+    font-weight: 400;
+    font-family: "Oswald";
+}
+.hero p{
+    text-align: left;
+    
+    font-size: 30px;
+    font-weight: 400;
+    /* font-family: "Montserrat"; */
+    margin: 0;
+}
+.hero button{
+    width: 322px;
+    height: 65px;
+    border-radius: 5px;
+    background-color: #e8631c;
+    color: #fff;
+    font-size: 29px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Oswald";
+    text-align: center;
+}
+.tour{
+    
+    background-color: #e8631c;
+}
+
+.tour .cards{
+    display: flex;
+    justify-content: space-around;
+}
+/*  */
+.card{
+    margin: 30px;
+}
+/*  */
+.cards .card{
+height: 500 px;
+width: 370 px; 
+text-align: center;
+background-color:  #303030;
+}
+.card img{
+    
+    max-width: 370px;
+}
+.card  h2{
+font-size: 37px;
+text-transform: uppercase;
+color: #ffffff;  
+font-weight: 400;
+font-family: "Oswald";
+text-align: center;
+margin-bottom: 10px;
+margin-top: 30px;
+}
+.card p{
+display: inline;
+width: 719px;
+height: 119px;
+font-size: 22px;
+color: #ffffff;
+font-weight: 400;
+font-family: "Montserrat";
+text-align: center;
+
+}
+.pricing{
+height: 974px;
+background-color: #303030;
+}
+.prosuct{
+
+}
+.statistics{
+    height: 974px;
+    background-color: #303030;
+}
+.quote{
+    height: 974px;
+    background-image: url(assets/quote-img.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    
+   
+    /* background-color: #e8631c;
+    background-image: url(assets/quote-img.png);
+    background-size: cover; */
+}
+.quote .background-img{
+   position: absolute;
+   top: 0;
+   left:0;
+   height: 100%;
+   width: 100%;
+   background-color: #e8631c;
+   mix-blend-mode: multiply;
+}
+.quote h1 , .quote p{
+    position: relative;
+    text-align: center;
+    margin: 200px;
+}
+.quote h1{
+    text-align: left;
+    text-transform: capitalize;
+    font-size: 125px;
+    font-weight: 400;
+    font-family: "Oswald";
+}
+.subscribe{
+height: 597px;
+background-color: #e8631c;
+}
+
+/* footer */
+footer{
+    height: 300px;
+    background-color: #303030;
+}
+footer .container{
+    max-width: 1440px;
+   
+}

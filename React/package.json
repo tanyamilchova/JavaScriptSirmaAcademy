@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "babel": "^5.8.38",
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2"
+  },
+  "name": "react",
+  "version": "1.0.0",
+  "main": "scr.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+  "transpile":"npx babel --watch src --out-dir dist --presets react-app/prod "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
