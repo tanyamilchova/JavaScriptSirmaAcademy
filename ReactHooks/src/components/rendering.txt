@@ -1,0 +1,14 @@
+Why the component is pre rendering in react:
+
+1. Initial rendering
+2. State changed (useState)
+3. Props changed
+4. Parent re-renders
+
+Key requirements:
+1. Unique Key
+2. Persistent vlue for each render( no random value!!!)
+
+
+State rools
+1.Every time we change the state have to return new refference

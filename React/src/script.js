@@ -31,42 +31,47 @@ const headerJSX=(
         <h2>Best UI Library </h2>
     </header>
 );
-rootReactElement.render(headerJSX);
+
+// create component without JSX
+
+// rootReactElement.render(headerJSX);
 
 // create element without JS 
-// function Main(){
-    // return React.createElement(
-    //     'main',
-    //     null,
-    //     React.createElement('h3',{},'Main section'),
-    //     React.createElement('p',{},'Lorem Ipsum')
+function Main(){
+    return React.createElement(
+    <main>
+        <h3> Main section</h3>
+        <p> Lorem Ipsum</p>
+    </main>
 
-    // );
-//     <main>
-//         <h3>
+        // 'main',
+        // null, // options
+        // React.createElement('h3',{},'Main section'), //1st child
+        // React.createElement('p',{},'Lorem Ipsum')    //2nd child
 
-//         </h3>
-//     </main>
-// }
+    );
+
+}
 // const mainElement=Main();//ръчно
-//  const bodyElement=React.createElement(
-//     'div',
-//     null,
-//     headerJSX,
-//     //Main()
-//     React.createElement(Main,)
-//  );
-//  function Body(){
-//     return(
-//     <div>
-//         {headerJSX}
-//         <Main/>
-//     </div>
-//     )
-//  }
 
-//  rootElement.render(bodyElement);
+ function Body(){
+    return(
+    <div>
+        {headerJSX}
+        <Main/>
+    </div>
+    )
+ }
+
+ rootReactElement.render(<Body/>);
 // //-COMPONENT IS A functons that returns JSX
 // function Comp(){
 //     return headerJSX;
+// }
+
+// const Component=()=>{
+//     return (
+//         <h1>abc</h1>
+
+//     );
 // }
